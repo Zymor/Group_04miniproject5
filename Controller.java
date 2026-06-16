@@ -1,4 +1,12 @@
+
+import java.text.DateFormat;
+import java.io.FileWriter; // Corrected spelling
+import java.io.*; // Added catch-all import for java.io
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -76,7 +84,19 @@ public class Controller {
                 + "DOB: " + dob + "\n"
                 + "Department: " + department + "\n"
                 + "Subjects: " + subjects;
-        resultLabel.setText(result);
+            try {
+                Date date = new Date();
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String dateTime = format.format(date);
+                result += "\n" + "Date and Time: " + dateTime;
+            
+                FileWriter writer = new FileWriter(name + ".txt");
+                writer.write(result);
+                writer.close();
+                resultLabel.setText("Data saved to " + name + ".txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+                resultLabel.setText(result);
+            }
     }
-
 }
