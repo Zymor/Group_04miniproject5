@@ -6,12 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Label layoutX="213.0" layoutY="52.0" text="MINI PROJECT 4" textFill="#cf0e60">
          <font>
@@ -39,9 +40,12 @@
       <Label layoutX="91.0" layoutY="191.0" text="DATE OF BIRTH" />
       <TextField fx:id="TEXTFIEL1" layoutX="234.0" layoutY="145.0" prefHeight="26.0" prefWidth="175.0" />
       <DatePicker fx:id="BIRTHDATE" layoutX="232.0" layoutY="187.0" promptText="BIRTHDATE" />
-      <RadioButton fx:id="GTR" layoutX="232.0" layoutY="246.0" mnemonicParsing="false" text="GTR" />
-      <RadioButton fx:id="GIC" layoutX="231.0" layoutY="273.0" mnemonicParsing="false" text="GIC" />
-      <RadioButton fx:id="AMS" layoutX="230.0" layoutY="305.0" mnemonicParsing="false" text="AMS" />
+      <RadioButton fx:id="GTR" layoutX="232.0" layoutY="246.0" mnemonicParsing="false" text="GTR">
+         <toggleGroup>
+            <ToggleGroup fx:id="group_department" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="GIC" layoutX="231.0" layoutY="273.0" mnemonicParsing="false" text="GIC" toggleGroup="$group_department" />
+      <RadioButton fx:id="AMS" layoutX="230.0" layoutY="305.0" mnemonicParsing="false" text="AMS" toggleGroup="$group_department" />
       <CheckBox fx:id="NETWORK" layoutX="224.0" layoutY="364.0" mnemonicParsing="false" text="NETWORK" />
       <CheckBox fx:id="OS" layoutX="225.0" layoutY="400.0" mnemonicParsing="false" text="OS" />
       <CheckBox fx:id="OOP" layoutX="227.0" layoutY="435.0" mnemonicParsing="false" text="OOP" />
