@@ -86,7 +86,7 @@ public class Controller {
                 + "Subjects: " + subjects;
             try {
                 Date date = new Date();
-                DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                DateFormat format = new SimpleDateFormat(   "yyyy-MM-dd HH:mm:ss");
                 String dateTime = format.format(date);
                 result += "\n" + "Date and Time: " + dateTime;
             
